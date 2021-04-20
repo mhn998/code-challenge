@@ -7,7 +7,14 @@ Write a function that accepts an array of strings. Return the longest string.
 
 const longestString = (arr) => {
     // Solution code here...
+
+    return arr.reduce((a, b) => {
+        return a.length > b.length ? a : b;
+    });
+
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,8 +30,17 @@ isSimilar("cat","act")
 => true
 ------------------------------------------------------------------------------------------------ */
 
-const isSimilar = (arr) => {
+const isSimilar = (str1, str2) => {
     // Solution code here...
+    let flag = 'false'
+    const str1Arr = str1.split('');
+    const str2Arr = str2.split('');
+    for (let i = 0; i < str1.length; i++) {
+        if (str2.includes(str1Arr[i])) {
+            flag = true;
+        }
+    }
+    return flag;
 };
 
 /* ------------------------------------------------------------------------------------------------
