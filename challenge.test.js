@@ -30,17 +30,14 @@ isSimilar("cat","act")
 => true
 ------------------------------------------------------------------------------------------------ */
 
-const isSimilar = (str1, str2) => {
+const isSimilar = (arr) => {
     // Solution code here...
-    let flag = 'false'
-    const str1Arr = str1.split('');
-    const str2Arr = str2.split('');
-    for (let i = 0; i < str1.length; i++) {
-        if (str2.includes(str1Arr[i])) {
-            flag = true;
-        }
+    if (arr.length < 1) {
+        return false;
     }
-    return flag;
+    let str1 = arr[0].split('').sort().join('');
+    let str2 = arr[1].split('').sort().join('');
+    return str1 == str2;
 };
 
 /* ------------------------------------------------------------------------------------------------
